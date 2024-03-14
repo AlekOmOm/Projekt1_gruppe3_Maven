@@ -24,11 +24,10 @@
         <input type="hidden" name="nrOfCorrectAnswers" th:value="${nrOfCorrectAnswers}" />
         <!-- add other hidden fields here if you need them -->
 
-
         <div class="optionsContainer">
             <button type="submit" name="questionNumber" value="0" class="option"> Restart Quiz </button>
             <button type="submit" name="nextQuestionNumber" th:value="${nextQuestionNumber}" class="option"> Next Question! </button>
-
+            <button type="submit" name="questionNumber" value="-1" class="option"> Go to Home! </button>
         </div>
     </form>
 </body>

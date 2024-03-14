@@ -11,12 +11,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class AdventureQuizController {
 
-
     private Question question;
 
     @Autowired
     private QuestionService questionService;
-
 
     @GetMapping("/AdventureQuiz")
     public String quizStart() {
@@ -25,16 +23,13 @@ public class AdventureQuizController {
 
     @PostMapping("/AdventureQuiz")
     public String processQuizChoice(Model model) {
-
         return "redirect:/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
     }
-
 
     @GetMapping("/question")
     public String showQuestion(@RequestParam("questionNumber") int questionNumber,
                                @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                                Model model) {
-
 
         question = questionService.getQuestionByNumber(questionNumber); // fetch the question
         if (question == null) {
@@ -42,9 +37,6 @@ public class AdventureQuizController {
             model.addAttribute("questionId", questionNumber);
             return "errorQuestionNotFound"; // return an error page or some error handling strategy.
         }
-
-        // Add the required attributes to the model.
-        // They are used to populate the fields in question.html
 
         model.addAttribute("questionTitle", question.getQuestionTitle());
         model.addAttribute("option1", question.getOption(0));
@@ -55,7 +47,6 @@ public class AdventureQuizController {
 
         return "AdventureQuiz/question";
     }
-
 
     @PostMapping("/question")
     public String processAnswer(@RequestParam("questionNumber") int questionNumber,
@@ -68,7 +59,6 @@ public class AdventureQuizController {
 
         return "redirect:/answer?questionNumber=" + questionNumber + "&userChoice=" + userChoice + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
     }
-
 
     @GetMapping("/answer")
     public String showAnswer(@RequestParam("questionNumber") int questionNumber,
@@ -97,14 +87,12 @@ public class AdventureQuizController {
         System.out.println("DEBUG, nrOfCorrectAnswers: "+nrOfCorrectAnswers);
         System.out.println("DEBUG, nextQuestionNumber: "+nextQuestionNumber);
         if (questionNumber==0) {
-            return "redirect:/AdventureQuiz";
+            return "redirect:/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
+        } else if (questionNumber==-1) {
+            return "redirect:/home";
         }
-
 
         return "redirect:/question?questionNumber=" + nextQuestionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
     }
-
-
-
 
 }
