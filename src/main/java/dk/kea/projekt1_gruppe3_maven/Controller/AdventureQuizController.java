@@ -56,8 +56,12 @@ public class AdventureQuizController {
 
         this.question = questionService.getQuestionByNumber(questionNumber);
 
+        System.out.println();
+        System.out.println("processAnswer");
         System.out.println("DEBUG, questionNumber: "+questionNumber);
-        if (questionNumber==10) {
+        System.out.println("-----------------");
+
+        if (questionNumber==11) {
             return "redirect:/results?nrOfCorrectAnswers=" + nrOfCorrectAnswers;
         }
 
@@ -69,6 +73,11 @@ public class AdventureQuizController {
                              @RequestParam("userChoice") String userChoice,
                              @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                              Model model) {
+
+        System.out.println();
+        System.out.println("processAnswer");
+        System.out.println("DEBUG, questionNumber: "+questionNumber);
+        System.out.println("-----------------");
 
         // logic processing
         model = questionService.processAnswer(questionNumber, userChoice, nrOfCorrectAnswers, model);
@@ -87,26 +96,52 @@ public class AdventureQuizController {
 
         model.addAttribute("nextQuestionNumber", nextQuestionNumber);
 
+        System.out.println();
+        System.out.println("postAnswer");
         System.out.println("DEBUG, questionNumber: "+questionNumber);
         System.out.println("DEBUG, nrOfCorrectAnswers: "+nrOfCorrectAnswers);
         System.out.println("DEBUG, nextQuestionNumber: "+nextQuestionNumber);
+        System.out.println("-----------------");
+
         if (questionNumber==0) {
             return "redirect:/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
         } else if (questionNumber==-1) {
             return "redirect:/home";
+        } else if (questionNumber==11) {
+            return "redirect:/results?questionNumber=" + questionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
         }
 
         return "redirect:/question?questionNumber=" + nextQuestionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
     }
 
     @GetMapping("/results")
-    public String getResults(@RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
+    public String getResults(@RequestParam("questionNumber") int questionNumber,
+                             @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                              Model model) {
+
+        int percentageOfCorrectAnswers = (int) ((nrOfCorrectAnswers / 10.0) * 100);
+
+        model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers);
+        model.addAttribute("percentageOfCorrectAnswers", percentageOfCorrectAnswers);
 
         // Fetch quiz results and add to model
         // model.addAttribute("results", results);
 
         return "AdventureQuiz/results";
+    }
+
+    @PostMapping ("/results")
+    public String postResults(@RequestParam("questionNumber") int questionNumber,
+                              @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
+                             Model model) {
+
+        if (questionNumber==-1) {
+            return "redirect:/home";
+        } else {
+            return "redirect:/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
+        }
+
+
     }
 
 }

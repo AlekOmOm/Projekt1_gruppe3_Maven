@@ -4,9 +4,17 @@
     <title>Quiz Results</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-<div id="results" th:text="${results}"></div>
-<a href="/home" id="home" >Go to Home</a>
-<a href="/retake" id="retake">Retake the Quiz</a>
-</body>
+    <body>
+        <form action="#" th:action="@{/result}" method="post">
+            <h2>Quiz Results</h2>
+            <p>Number of Correct Answers: <span th:text="${nrOfCorrectAnswers}"></span></p>
+            <p>Number of Questions: <span text="10"></span></p>
+            <p>Percentage of Correct Answers: <span th:text="${percentageOfCorrectAnswers + '%!, well done!'}"></span></p>
+
+            <div class="optionsContainer">
+                <button type="submit" name="questionNumber" value="0" class="option"> Restart Quiz </button>
+                <button type="submit" name="questionNumber" value="-1" class="option"> Go to Home! </button>
+            </div>
+        </form>
+    </body>
 </html>

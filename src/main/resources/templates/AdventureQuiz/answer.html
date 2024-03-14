@@ -26,8 +26,12 @@
 
         <div class="optionsContainer">
             <button type="submit" name="questionNumber" value="0" class="option"> Restart Quiz </button>
-            <button type="submit" name="nextQuestionNumber" th:value="${nextQuestionNumber}" class="option"> Next Question! </button>
-            <button type="submit" name="questionNumber" value="-1" class="option"> Go to Home! </button>
+
+            <!-- Show Next Question button if current question number less than 10 -->
+            <button type="submit" name="nextQuestionNumber" th:value="${nextQuestionNumber}" class="option" th:unless="${questionNumber == 10}"> Next Question! </button>
+
+            <!-- Show Get Results button if current question number is 10 -->
+            <button type="submit" name="questionNumber" th:value="11" class="option" th:if="${questionNumber == 10}"> Get Results! </button>
         </div>
     </form>
 </body>
