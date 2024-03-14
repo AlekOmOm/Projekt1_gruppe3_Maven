@@ -56,6 +56,10 @@ public class AdventureQuizController {
 
         this.question = questionService.getQuestionByNumber(questionNumber);
 
+        System.out.println("DEBUG, questionNumber: "+questionNumber);
+        if (questionNumber==10) {
+            return "redirect:/results?nrOfCorrectAnswers=" + nrOfCorrectAnswers;
+        }
 
         return "redirect:/answer?questionNumber=" + questionNumber + "&userChoice=" + userChoice + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
     }
@@ -93,6 +97,16 @@ public class AdventureQuizController {
         }
 
         return "redirect:/question?questionNumber=" + nextQuestionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
+    }
+
+    @GetMapping("/results")
+    public String getResults(@RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
+                             Model model) {
+
+        // Fetch quiz results and add to model
+        // model.addAttribute("results", results);
+
+        return "AdventureQuiz/results";
     }
 
 }
