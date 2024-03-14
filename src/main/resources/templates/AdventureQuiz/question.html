@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${questionTitle}">Question</title>
+    <meta charset="UTF-8">
     <style>
         .option {
             display: inline-block;
@@ -16,19 +16,30 @@
         .option:hover {
             background-color: #ddd;
         }
+        .optionsContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
     </style>
+    <title></title>
 </head>
+
 <body>
-<h2 th:text="${questionTitle}"></h2>
-<form action="#" th:action="@{/answer}" method="post">
-    <input type="hidden" name="questionNumber" th:value="${questionNumber}" />
-    <!-- add other hidden fields here if you need them -->
-    <div class="optionsContainer">
-        <button type="submit" name="answer" value="1" class="option" th:text="${option1}" ></button>
-        <button type="submit" name="answer" value="2" class="option" th:text="${option2}" ></button>
-        <button type="submit" name="answer" value="3" class="option" th:text="${option3}" ></button>
-    </div>
-</form>
+    <h2 th:text="${questionNumber} + '. question - Adventure Quiz'"> Question nr and Quiz Type</h2>
+
+    <h1 th:text="${questionTitle}"></h1>
+
+    <form action="#" th:action="@{/question}" method="post">
+        <input type="hidden" name="questionNumber" th:value="${questionNumber}" />
+        <input type="hidden" name="nrOfCorrectAnswers" th:value="${nrOfCorrectAnswers}" />
+        <!-- add other hidden fields here if you need them -->
+        <div class="optionsContainer">
+            <button type="submit" name="userChoice" value="1" class="option" th:text="${option1}" ></button>
+            <button type="submit" name="userChoice" value="2" class="option" th:text="${option2}" ></button>
+            <button type="submit" name="userChoice" value="3" class="option" th:text="${option3}" ></button>
+        </div>
+    </form>
 </body>
 </html>
 

@@ -2,6 +2,7 @@ package dk.kea.projekt1_gruppe3_maven.Service;
 
 import dk.kea.projekt1_gruppe3_maven.Model.Question;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.util.*;
 
@@ -33,30 +34,33 @@ public class QuestionService {
     Map<Integer, Question> quizQuestionMap = new HashMap<Integer, Question>() {
         {
             put(1, new Question(1, "How much food gets wasted globally each year?", Arrays.asList("1.3 billion tonnes", "5 billion tonnes", "300 million tonnes"), "1.3 billion tonnes"));
-
-
         }
     };
 
-    public Question getQuestionByNumber(String questionNumber, String quizType) {
-        int qNr = stringToInt(questionNumber, adventureQuestionMap.size());
-        // logic for getting the question by the question number
-        try {
-            switch (quizType) {
-                case "1":
-                    return adventureQuestionMap.get(qNr);
-                case "2":
-                    return quizQuestionMap.get(qNr);
-            }
+    public Question getQuestionByNumber(int questionNumber) {
 
-        } catch (NumberFormatException e) {
-            throw new RuntimeException(e);
-        }
-        return null;
+        return adventureQuestionMap.get(questionNumber);
+
     }
 
+    public Model processAnswer(int questionNumber, String userChoice, int nrOfCorrectAnswers, Model model) {
+
+        int uChoice = stringToInt(userChoice, 3);
+        Question question = getQuestionByNumber(questionNumber);
+        boolean isCorrect = isCorrect(question, uChoice);
+
+
+        model.addAttribute("questionNumber", questionNumber);
+        model.addAttribute("questionTitle", question.getQuestionTitle());
+        model.addAttribute("answer", question.getAnswer());
+        model.addAttribute("userChoice", userChoice);
+        model.addAttribute("isCorrect", isCorrect ? "Correct" : "Incorrect");
+        model.addAttribute("nrOfCorrectAnswers", isCorrect ? nrOfCorrectAnswers + 1 : nrOfCorrectAnswers);
+        return model;
+    }
 
     public boolean isCorrect(Question question, int userChoice) {
+        userChoice -= 1;
         return question.getAnswer().equals(question.getOptions().get(userChoice));
     }
 }

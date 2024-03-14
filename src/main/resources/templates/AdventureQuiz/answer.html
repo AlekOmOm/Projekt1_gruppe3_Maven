@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Answer</title>
+    <title>Answer Page</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+<h2><strong> Adventure Quiz!</strong> </h2>
 
-    <h2 th:text="${questionTitle}"></h2>
-    <p th:text="${answerText}"></p>
+<p><strong>Question Number:</strong> <span th:text="${questionNumber}"></span></p>
+
+<p><strong>Your Choice:</strong> <span th:text="${userChoice}"></span></p>
+
+<!-- Feedback 'correct' or 'incorrect' -->
+<p><strong>Your Answer is:</strong> <span th:text="${isCorrect}">Feedback Content</span></p>
+
+<!-- The count of correct answers in a row -->
+<p><strong>Number of Correct Answers:</strong> <span th:text="${nrOfCorrectAnswers}"></span></p>
+
+<!-- Buttons for restart and next question -->
+    <form action="#" th:action="@{/answer}" method="post">
+        <input type="hidden" name="questionNumber" th:value="${questionNumber}" />
+        <input type="hidden" name="nextQuestionNumber" th:value="${nextQuestionNumber}" />
+        <input type="hidden" name="nrOfCorrectAnswers" th:value="${nrOfCorrectAnswers}" />
+        <!-- add other hidden fields here if you need them -->
 
 
+        <div class="optionsContainer">
+            <button type="submit" name="questionNumber" value="0" class="option"> Restart Quiz </button>
+            <button type="submit" name="nextQuestionNumber" th:value="${nextQuestionNumber}" class="option"> Next Question! </button>
+
+        </div>
+    </form>
 </body>
 </html>
