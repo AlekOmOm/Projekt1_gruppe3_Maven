@@ -1,4 +1,4 @@
-package com.example.projekt1_gruppe3.Controller;
+package dk.kea.projekt1_gruppe3_maven.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping ("/home")
-    public String home() {
-        return "Home";
+    public String goHome() {
+        return "home";
     }
 }

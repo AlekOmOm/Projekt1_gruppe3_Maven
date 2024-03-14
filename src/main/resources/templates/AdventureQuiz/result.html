@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Quiz Results</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
     <body>
-        <form action="#" th:action="@{/result}" method="post">
+        <form action="#" th:action="@{/result}" method="get">
+
             <h2>Quiz Results</h2>
             <p>Number of Correct Answers: <span th:text="${nrOfCorrectAnswers}"></span></p>
             <p>Number of Questions: <span text="10"></span></p>
-            <p>Percentage of Correct Answers: <span th:text="${percentageOfCorrectAnswers + '%!, well done!'}"></span></p>
+            <p>Percentage of Correct Answers: <span th:text="${percentageOfCorrectAnswers + '%, well done!'}"></span></p>
 
             <div class="optionsContainer">
-                <button type="submit" name="questionNumber" value="0" class="option"> Restart Quiz </button>
-                <button type="submit" name="questionNumber" value="-1" class="option"> Go to Home! </button>
+                <button type="submit" formaction="question?&questionNumber=1&nrOfCorrectAnswers=0" class="option"> Restart Quiz </button>
+                <button type="submit" formaction="/Home"  class="option"> Go to Home! </button>
             </div>
+
         </form>
     </body>
 </html>

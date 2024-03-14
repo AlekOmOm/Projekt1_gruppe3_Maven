@@ -31,6 +31,8 @@ public class AdventureQuizController {
                                @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                                Model model) {
 
+
+
         question = questionService.getQuestionByNumber(questionNumber); // fetch the question
         if (question == null) {
             model.addAttribute("error", "The question with number " + questionNumber + " does not exist.");
@@ -56,13 +58,8 @@ public class AdventureQuizController {
 
         this.question = questionService.getQuestionByNumber(questionNumber);
 
-        System.out.println();
-        System.out.println("processAnswer");
-        System.out.println("DEBUG, questionNumber: "+questionNumber);
-        System.out.println("-----------------");
-
         if (questionNumber==11) {
-            return "redirect:/results?nrOfCorrectAnswers=" + nrOfCorrectAnswers;
+            return "redirect:/result?nrOfCorrectAnswers=" + nrOfCorrectAnswers;
         }
 
         return "redirect:/answer?questionNumber=" + questionNumber + "&userChoice=" + userChoice + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
@@ -73,11 +70,6 @@ public class AdventureQuizController {
                              @RequestParam("userChoice") String userChoice,
                              @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                              Model model) {
-
-        System.out.println();
-        System.out.println("processAnswer");
-        System.out.println("DEBUG, questionNumber: "+questionNumber);
-        System.out.println("-----------------");
 
         // logic processing
         model = questionService.processAnswer(questionNumber, userChoice, nrOfCorrectAnswers, model);
@@ -96,26 +88,19 @@ public class AdventureQuizController {
 
         model.addAttribute("nextQuestionNumber", nextQuestionNumber);
 
-        System.out.println();
-        System.out.println("postAnswer");
-        System.out.println("DEBUG, questionNumber: "+questionNumber);
-        System.out.println("DEBUG, nrOfCorrectAnswers: "+nrOfCorrectAnswers);
-        System.out.println("DEBUG, nextQuestionNumber: "+nextQuestionNumber);
-        System.out.println("-----------------");
-
-        if (questionNumber==0) {
+        if (nextQuestionNumber==11) {
+            return "redirect:/result?questionNumber=" + questionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
+        } else if (questionNumber==0) {
             return "redirect:/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
         } else if (questionNumber==-1) {
             return "redirect:/home";
-        } else if (questionNumber==11) {
-            return "redirect:/results?questionNumber=" + questionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
+        } else {
+            return "redirect:/question?questionNumber=" + nextQuestionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
         }
-
-        return "redirect:/question?questionNumber=" + nextQuestionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
     }
 
-    @GetMapping("/results")
-    public String getResults(@RequestParam("questionNumber") int questionNumber,
+    @GetMapping("/result")
+    public String getResult(@RequestParam("questionNumber") int questionNumber,
                              @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                              Model model) {
 
@@ -124,24 +109,12 @@ public class AdventureQuizController {
         model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers);
         model.addAttribute("percentageOfCorrectAnswers", percentageOfCorrectAnswers);
 
-        // Fetch quiz results and add to model
-        // model.addAttribute("results", results);
+        int restartQuiz = 0;
+        int goHome = 0;
+        model.addAttribute("restartQuiz", restartQuiz);
+        model.addAttribute("goHome", goHome);
 
-        return "AdventureQuiz/results";
-    }
-
-    @PostMapping ("/results")
-    public String postResults(@RequestParam("questionNumber") int questionNumber,
-                              @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
-                             Model model) {
-
-        if (questionNumber==-1) {
-            return "redirect:/home";
-        } else {
-            return "redirect:/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
-        }
-
-
+        return "AdventureQuiz/result";
     }
 
 }
