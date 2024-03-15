@@ -1,6 +1,7 @@
 
 /* Laver layout for body, header, footer, container og box's */
 body {
+    background-image: url("Images/modernSkrald.png");
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -10,7 +11,7 @@ body {
 }
 
 .hiddenImage {
-    display: none;
+display: none;
 }
 
 header, footer {
@@ -19,14 +20,12 @@ header, footer {
     text-align: center;
     flex: 0 0 auto;
 }
-
 header {
     text-align: center;
     background-color: #333;
     color: #fff;
     padding: 10px;
 }
-
 header h1 {
     margin: 0;
 }
@@ -40,7 +39,6 @@ header h1 {
     background-color: rgba(255, 255, 255, 0.7);
     max-width: 50%;
 }
-
 pre {
     font-family: Arial, sans-serif;
     padding: 10px;
@@ -75,7 +73,6 @@ footer {
     text-align: center;
     flex: 1;
 }
-
 .homeButtonTitel {
     font-size: 1vw;
     font-family: Arial, sans-serif;
@@ -85,21 +82,27 @@ footer {
     max-width: 50%;
     padding: 20px;
 }
-
 .homeScreenButton {
     cursor: pointer;
     width: 50px;
 }
-
 .homeScreenLogo {
     width: 20px;
     height: 20px;
+
+}
+.privateQuizz {
+    font-size: 1vw;
+    font-family: Arial, sans-serif;
+    display: block;
+    margin: 0 auto;
+
+    max-width: 50%;
+    padding: 20px;
 }
 
 .tagQuizz {
+    cursor: pointer;
     width: 90px;
-    height: 25px;
-    display: block;
-    margin: 0 auto;
-    background-color: rgba(255,255,255,0.4);
+
 }
