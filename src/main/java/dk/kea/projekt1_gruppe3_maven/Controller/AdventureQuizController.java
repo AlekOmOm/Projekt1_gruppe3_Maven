@@ -117,4 +117,18 @@ public class AdventureQuizController {
         return "AdventureQuiz/result";
     }
 
+    @PostMapping("/result")
+    public String restartQuiz(@RequestParam("restartQuiz") int restartQuiz,
+                              @RequestParam("goHome") int goHome,
+                              Model model) {
+
+        if (restartQuiz==1) {
+            return "redirect:AdventureQuiz/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
+        } else if (goHome==1) {
+            return "redirect:home";
+        } else {
+            return "redirect:AdventureQuiz/AdventureQuiz";
+        }
+    }
+
 }
