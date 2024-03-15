@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Flyer Bestillings side</title>
+    <link rel="stylesheet" href="../../../../../Projekt1_gruppe3_Maven/src/main/resources/static/Ordering.css">
 </head>
+
 <body>
+
+<form id="BestilFlyers" action="Ordering.html">
+    <h2>Udfyld Formularen for at bestille flyers</h2>
+    <label for="Virksomheds navn"> Virksomhedens navn </label>
+    <input type="string" id="Virksomheds navn" class="input" name="Virksomhedens navn" required autofocus>
+    <label for="Leverings adresse"> Leverings adresse </label>
+    <input type="string" id="Leverings adresse" class="input" name="Leverings adresse" required>
+    <label for="Email"> Email </label>
+    <input type="string" id="email" class="input" name="email" required>
+
+
+
+
+</form>
+
+
 
 </body>
 </html>
+
+<!-- https://puginarug.com/  -->
+
+<label for="weight">Weight (kg):</label>
+<input type="number" id="weight" class="input" name="weight" required>
+<input type="submit" class="submit" value="Calculate BMI">

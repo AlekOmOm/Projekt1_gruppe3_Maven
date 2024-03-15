@@ -1,16 +1,56 @@
+body{
+    /* Fjern scroling*/
+    overflow: hidden;
+    height: 100%;
+}
+
 h1{
+    /* Centrering, størelse og tekst type */
+    font-family: Arial;
     text-align: center;
 }
 
-body {
-
-    background-image: url('/static/Images/GreenCompany.jpg');
-
-    background-size: auto;
-
-    background-position: center;
-
-    background-repeat: no-repeat;
-
-    background-attachment: fixed;
+h3{
+    font-family: Arial;
+    text-align: center;
 }
+
+.knapcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    height: 100vh;
+    text-align: center;
+}
+
+.Knap{
+    margin: 10px;
+    cursor: pointer;
+    transform: translateY(-90%);
+}
+
+
+/* transform gør så billedet er centreret */
+.Foto1{
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.JusterBillede{
+    position: fixed;
+    width: 25%;
+    height: 35%;
+    top: 140px;
+    /* Placere i midten*/
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
