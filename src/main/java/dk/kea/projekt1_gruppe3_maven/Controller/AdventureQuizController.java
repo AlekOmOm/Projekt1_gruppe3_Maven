@@ -8,10 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 public class AdventureQuizController {
 
     private Question question;
+
+
 
     @Autowired
     private QuestionService questionService;
@@ -32,7 +37,6 @@ public class AdventureQuizController {
                                Model model) {
 
 
-
         question = questionService.getQuestionByNumber(questionNumber); // fetch the question
         if (question == null) {
             model.addAttribute("error", "The question with number " + questionNumber + " does not exist.");
@@ -46,6 +50,7 @@ public class AdventureQuizController {
         model.addAttribute("option3", question.getOption(2));
         model.addAttribute("questionNumber", questionNumber);
         model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers); //added
+        model.addAttribute("imageName", questionService.addRandomImageToModel(model));
 
         return "AdventureQuiz/question";
     }
@@ -74,8 +79,13 @@ public class AdventureQuizController {
         // logic processing
         model = questionService.processAnswer(questionNumber, userChoice, nrOfCorrectAnswers, model);
         int nextQuestionNumber = questionNumber + 1;
+        int restartQuiz = 0;
+        int goHome = 0;
+        model.addAttribute("restartQuiz", restartQuiz);
+        model.addAttribute("goHome", goHome);
         model.addAttribute("questionNumber", questionNumber);
         model.addAttribute("nextQuestionNumber", nextQuestionNumber);
+        model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers);
 
         return "AdventureQuiz/answer";
     }
@@ -84,17 +94,29 @@ public class AdventureQuizController {
     public String postAnswer(@RequestParam("questionNumber") int questionNumber,
                              @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                                 @RequestParam("nextQuestionNumber") int nextQuestionNumber,
+                                @RequestParam("restartQuiz") int restartQuiz,
+                               @RequestParam("goHome") int goHome,
                                Model model) {
+
+        System.out.println();
+        System.out.println("DEBUG: postAnswer()");
+        System.out.println("questionNumber: " + questionNumber);
+        System.out.println("restartQuiz: " + restartQuiz);
+        System.out.println("goHome: " + goHome);
+
 
         model.addAttribute("nextQuestionNumber", nextQuestionNumber);
 
         if (nextQuestionNumber==11) {
             return "redirect:/result?questionNumber=" + questionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
-        } else if (questionNumber==0) {
+        } else if (restartQuiz==1) {
+            System.out.println("if (restartQuiz==1) accessed");
             return "redirect:/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
-        } else if (questionNumber==-1) {
+        } else if (goHome==1) {
+            System.out.println("if (goHome==1) accessed");
             return "redirect:/home";
         } else {
+            System.out.println("default accessed");
             return "redirect:/question?questionNumber=" + nextQuestionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
         }
     }

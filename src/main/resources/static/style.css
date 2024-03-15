@@ -31,3 +31,11 @@ p {
     background-color: #4CAF50; /* Green */
     color: white;
 }
+
+.result-image {
+    width: 500px;
+    height: auto;
+    border: 1px solid #000;
+    display: block;
+    margin-top: 20px;
+}

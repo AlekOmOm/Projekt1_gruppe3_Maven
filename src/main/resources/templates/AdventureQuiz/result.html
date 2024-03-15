@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Quiz Results</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" th:href="style.css">
 </head>
     <body>
         <form action="#" th:action="@{/result}" method="post">
@@ -10,7 +10,12 @@
             <h2>Quiz Results</h2>
             <p>Number of Correct Answers: <span th:text="${nrOfCorrectAnswers}"></span></p>
             <p>Number of Questions: <span text="10"></span></p>
-            <p>Percentage of Correct Answers: <span th:text="${percentageOfCorrectAnswers + '%, well done!v2'}"></span></p>
+            <p>Percentage of Correct Answers: <span th:text="${percentageOfCorrectAnswers + '%, well done!'}"></span></p>
+
+            <img th:src="@{/Images/beatUpDora.jpg}" th:if="${nrOfCorrectAnswers == 1}" class="result-image" alt="Image for 1 correct answer"/>
+            <img th:src="@{/Images/infoOnDora.jpg}" th:if="${nrOfCorrectAnswers == 10}" class="result-image" alt="Image for perfect score"/>
+            <img th:src="@{/Images/wellDoneDoraAndMonkey.jpg}" th:if="${nrOfCorrectAnswers > 1 and nrOfCorrectAnswers < 10}" class="result-image" alt="Image for getting between 2 and 9 correct answers"/>
+            <!-- ... -->
 
             <input type="hidden" name="questionNumber" th:value="${questionNumber}" />
             <input type="hidden" name="nrOfCorrectAnswers" th:value="${nrOfCorrectAnswers}" />

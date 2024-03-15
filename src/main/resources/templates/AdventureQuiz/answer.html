@@ -22,10 +22,13 @@
         <input type="hidden" name="questionNumber" th:value="${questionNumber}" />
         <input type="hidden" name="nextQuestionNumber" th:value="${nextQuestionNumber}" />
         <input type="hidden" name="nrOfCorrectAnswers" th:value="${nrOfCorrectAnswers}" />
+        <input type="hidden" name="restartQuiz" th:value="${restartQuiz}" />
+        <input type="hidden" name="goHome" th:value="${goHome}" />
+
         <!-- add other hidden fields here if you need them -->
 
         <div class="optionsContainer">
-            <button type="submit" name="questionNumber" value="0" class="option"> Restart Quiz </button>
+            <button type="submit" th:name="restartQuiz" th:value="1" class="option"> Restart Quiz </button>
 
             <!-- Show Next Question button if current question number less than 10 -->
             <button type="submit" name="nextQuestionNumber" th:value="${nextQuestionNumber}" class="option" th:unless="${questionNumber == 10}"> Next Question! </button>

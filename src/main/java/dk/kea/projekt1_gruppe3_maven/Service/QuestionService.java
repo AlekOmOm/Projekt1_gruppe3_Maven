@@ -37,6 +37,9 @@ public class QuestionService {
         }
     };
 
+    public List<String> imageNames = Arrays.asList("backpackDora.jpg", "DoraReadyToStart.jpg", "jumpingMonkeyDora.jpg", "runningDora.jpg",
+            "sittingMonkeyDora.jpg", "TylerDora.jpg", "riseAndDownFallOfDora.jpg");
+
     public Question getQuestionByNumber(int questionNumber) {
 
         return adventureQuestionMap.get(questionNumber);
@@ -62,6 +65,12 @@ public class QuestionService {
     public boolean isCorrect(Question question, int userChoice) {
         userChoice -= 1;
         return question.getAnswer().equals(question.getOptions().get(userChoice));
+    }
+
+    public String addRandomImageToModel(Model model) {
+
+        Random random = new Random();
+        return imageNames.get(random.nextInt(imageNames.size()));
     }
 }
 
