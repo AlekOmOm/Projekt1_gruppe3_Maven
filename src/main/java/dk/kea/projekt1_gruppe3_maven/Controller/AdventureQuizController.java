@@ -104,10 +104,17 @@ public class AdventureQuizController {
                              @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                              Model model) {
 
+        System.out.println();
+        System.out.println("DEBUG: getResult()");
+        System.out.println("questionNumber: " + questionNumber);
+        System.out.println("nrOfCorrectAnswers: " + nrOfCorrectAnswers);
+
         int percentageOfCorrectAnswers = (int) ((nrOfCorrectAnswers / 10.0) * 100);
 
         model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers);
         model.addAttribute("percentageOfCorrectAnswers", percentageOfCorrectAnswers);
+        model.addAttribute("questionNumber", questionNumber);
+
 
         int restartQuiz = 0;
         int goHome = 0;
@@ -122,12 +129,23 @@ public class AdventureQuizController {
                               @RequestParam("goHome") int goHome,
                               Model model) {
 
+        System.out.println();
+        System.out.println("DEBUG: restartQuiz()");
+        System.out.println("restartQuiz: " + restartQuiz);
+        System.out.println("goHome: " + goHome);
+
         if (restartQuiz==1) {
-            return "redirect:AdventureQuiz/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
+            System.out.println("if (restartQuiz==1) accessed");
+            return "redirect:question?questionNumber=1" + "&nrOfCorrectAnswers=0";
         } else if (goHome==1) {
+            System.out.println("if (goHome==1) accessed");
+            // templates/Home.html
             return "redirect:home";
         } else {
-            return "redirect:AdventureQuiz/AdventureQuiz";
+            System.out.println("AdventureQuiz/AdventureQuiz accessed");
+            // templates/AdventureQuiz/AdventureQuiz.html
+            return "redirect:AdventureQuiz";
+
         }
     }
 

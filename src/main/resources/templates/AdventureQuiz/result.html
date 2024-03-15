@@ -10,7 +10,11 @@
             <h2>Quiz Results</h2>
             <p>Number of Correct Answers: <span th:text="${nrOfCorrectAnswers}"></span></p>
             <p>Number of Questions: <span text="10"></span></p>
-            <p>Percentage of Correct Answers: <span th:text="${percentageOfCorrectAnswers + '%, well done!'}"></span></p>
+            <p>Percentage of Correct Answers: <span th:text="${percentageOfCorrectAnswers + '%, well done!v2'}"></span></p>
+
+            <input type="hidden" name="questionNumber" th:value="${questionNumber}" />
+            <input type="hidden" name="nrOfCorrectAnswers" th:value="${nrOfCorrectAnswers}" />
+            <input type="hidden" name="goHome" th:value="${goHome}" />
 
             <!-- ...other form controls... -->
             <div class="optionsContainer">
