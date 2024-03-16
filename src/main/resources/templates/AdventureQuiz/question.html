@@ -1,44 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <style>
-        .option {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #f0f0f0;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            text-decoration: none;
-            color: black;
-        }
-        .option:hover {
-            background-color: #ddd;
-        }
-        .optionsContainer {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-        /* Add below CSS */
-        .contentContainer {
-            display: flex;
-            justify-content: space-between;
-        }
-        .question-area {
-            flex: 50%;
-        }
-        .image-area {
-            flex: 35%;
-        }
-        .image-area img {
-            width: 100%;
-            max-height: 200px;
-            object-fit: contain;
-        }
-    </style>
-    <title></title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/question.css}">
 </head>
 <body>
 <!-- Main Content Container -->

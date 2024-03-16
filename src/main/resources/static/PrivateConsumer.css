@@ -1,7 +1,6 @@
 
 /* Laver layout for body, header, footer, container og box's */
 body {
-    background-image: url("Images/modernSkrald.png");
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -9,9 +8,22 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-
+/*
 .hiddenImage {
 display: none;
+}
+
+ */
+
+
+.main-content {
+    background-image: url("Images/modernSkraldJpg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    /* To ensure the main takes up all available space */
+    flex: 1;
 }
 
 header, footer {

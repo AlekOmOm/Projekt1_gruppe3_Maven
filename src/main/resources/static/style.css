@@ -1,41 +1,96 @@
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h2 {
-    color: #333;
-    font-size: 26px;
-    margin-bottom: 10px;
-}
-
-p {
-    color: #666;
-    font-size: 20px;
-}
-
-.buttons button {
-    background-color: #008CBA; /* Blue */
-    border: none;
-    color: white;
-    padding: 15px 32px;
+header, footer {
+    background-color: #ddd;
+    padding: 20px;
     text-align: center;
-    text-decoration: none;
+    flex: 0 0 auto;
+}
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 7px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    padding: 20px;
+}
+
+.box {
+    background-color: rgba(170,169,173,0.7);
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    position: sticky;
+    top: 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.main-content {
+    background-image: url("Images/modernSkraldJpg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex: 1;
+}
+
+.option {
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
 }
 
-.buttons button:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
+.option:hover {
+    background-color: #ddd;
 }
 
-.result-image {
-    width: 500px;
-    height: auto;
-    border: 1px solid #000;
-    display: block;
-    margin-top: 20px;
+.optionsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contentContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.question-area {
+    flex: 50%;
+}
+
+.image-area {
+    flex: 35%;
+}
+
+.image-area img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
 }
