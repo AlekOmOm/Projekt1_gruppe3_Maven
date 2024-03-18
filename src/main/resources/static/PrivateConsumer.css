@@ -1,6 +1,10 @@
 
 /* Laver layout for body, header, footer, container og box's */
 body {
+    background-image: url('../../../../../Projekt1_gruppe3_Maven/src/main/resources/static/Images/modernSkrald.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
