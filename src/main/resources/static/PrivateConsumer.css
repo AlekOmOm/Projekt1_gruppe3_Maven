@@ -1,12 +1,17 @@
 
 /* Laver layout for body, header, footer, container og box's */
 body {
+    font-family: Arial sans-serif;
+    background-image: url('../../../../../Projekt1_gruppe3_Maven/src/main/resources/static/Images/modernSkrald.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+
 }
 /*
 .hiddenImage {
@@ -26,95 +31,109 @@ display: none;
     flex: 1;
 }
 
-header, footer {
-    background-color: #ddd;
-    padding: 20px;
-    text-align: center;
-    flex: 0 0 auto;
-}
-header {
-    text-align: center;
+
+
+header{
+    font-family: Arial sans-serif;
     background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
-header h1 {
-    margin: 0;
-}
-
-.text {
     text-align: center;
-    font-size: 1vw;
-    font-family: Arial, sans-serif;
-    display: block;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.7);
-    max-width: 50%;
-}
-pre {
-    font-family: Arial, sans-serif;
-    padding: 10px;
+    padding: 20px;
+    color: #fff;
 }
 
-p {
+footer{
     font-family: Arial, sans-serif;
-}
-
-footer {
     background-color: #333;
+    text-align: center;
+    padding: 20px;
     color: #fff;
-    padding: 7px;
     text-align: center;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Styler container og boxes */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 1;
-    padding: 20px;
-}
 
-.box {
-    background-color: rgba(170,169,173,0.7);
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    position: sticky;
-    top: 10px;
-    text-align: center;
-    flex: 1;
-}
-.homeButtonTitel {
-    font-size: 1vw;
-    font-family: Arial, sans-serif;
-    display: block;
-    margin: 0 auto;
+    header h1 {
+        margin: 0;
+    }
 
-    max-width: 50%;
-    padding: 20px;
-}
-.homeScreenButton {
-    cursor: pointer;
-    width: 50px;
-}
-.homeScreenLogo {
-    width: 20px;
-    height: 20px;
+    .text {
+        text-align: center;
+        font-size: 1vw;
+        font-family: Arial, sans-serif;
+        display: block;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.7);
+        max-width: 50%;
+    }
 
-}
-.privateQuizz {
-    font-size: 1vw;
-    font-family: Arial, sans-serif;
-    display: block;
-    margin: 0 auto;
+    pre {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
 
-    max-width: 50%;
-    padding: 20px;
-}
+    p {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-.tagQuizz {
-    cursor: pointer;
-    width: 90px;
 
-}
+    /* Styler container og boxes */
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex: 1;
+        padding: 20px;
+    }
+
+    .box {
+        background-color: rgba(170, 169, 173, 0.7);
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        position: sticky;
+        top: 10px;
+        text-align: center;
+        flex: 1;
+    }
+
+    .homeButtonTitel {
+        font-size: 1vw;
+        font-family: Arial, sans-serif;
+        display: block;
+        margin: 0 auto;
+
+        max-width: 50%;
+        padding: 20px;
+    }
+
+    .homeScreenButton {
+        cursor: pointer;
+        width: 50px;
+    }
+
+    .homeScreenLogo {
+        width: 20px;
+        height: 20px;
+
+    }
+
+    .privateQuizz {
+        font-size: 1vw;
+        font-family: Arial, sans-serif;
+        display: block;
+        margin: 0 auto;
+
+        max-width: 50%;
+        padding: 20px;
+    }
+
+    .tagQuizz {
+        cursor: pointer;
+        width: 90px;
+
+    }
+

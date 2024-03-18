@@ -8,27 +8,41 @@
 
 <body>
 
-<form id="BestilFlyers" action="Ordering.html">
-    <h2>Udfyld Formularen for at bestille flyers</h2>
+<header>                                <!-- Laver unik header -->
+    <h1> Bestil flyers til din virksomhed </h1>
+</header>
+
+<form id="BestilFlyers" action="OrderConfirmed.html">
+    <h2>Udfyld formularen for at bestille dine flyers - Alle felter skal udfyldes!</h2>
     <label for="Virksomheds navn"> Virksomhedens navn </label>
-    <input type="string" id="Virksomheds navn" class="input" name="Virksomhedens navn" required autofocus>
+    <input type="text" id="Virksomheds navn" class="input" name="Virksomhedens navn" required autofocus>
     <label for="Leverings adresse"> Leverings adresse </label>
-    <input type="string" id="Leverings adresse" class="input" name="Leverings adresse" required>
+    <input type="text" id="Leverings adresse" class="input" name="Leverings adresse" required>
     <label for="Email"> Email </label>
-    <input type="string" id="email" class="input" name="email" required>
+    <input type="text" id="email" class="input" name="email" required>
+    <label for="TelefonNummer"> Telefon Nummer </label>
+    <input type="text" id="TelefonNummer" class="input" name="Telefon Nummer" required>
+    <label for="AntalFlyers"> Antal flyers </label>
+    <input type="text" id="AntalFlyers" class="input" name="Antal flyers" required>
 
 
-
+    <div class="knapper">
+        <a href="Home.html" class="ForsideKnap">
+            <button type="button"> Klik her for at komme tilbage til forsiden </button>
+        </a>
+        <input type="submit" class="bestil" value="Bestil">
+    </div>
 
 </form>
 
-
+<footer>                                <!-- Footer, laver sidefod -->
+    <p>Copyright © 2024 Organisation mod Madspild</p>
+</footer>
 
 </body>
 </html>
 
-<!-- https://puginarug.com/  -->
 
-<label for="weight">Weight (kg):</label>
-<input type="number" id="weight" class="input" name="weight" required>
-<input type="submit" class="submit" value="Calculate BMI">
+
+
+

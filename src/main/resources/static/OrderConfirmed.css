@@ -1,19 +1,45 @@
-body {
+body{
     text-align: center;
     font-family: Arial, sans-serif;
-
+    font-size: 16px;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
-h1{
-    padding: 0;
-    margin: 0;
+.Medddelse{
+    text-align: center;
+}
+.PUG{
+    margin: 100px;
+    text-align: center;
 }
 
-p {
+
+
+.Foto1{
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+header h1 {
+    margin: 0;
+}
+p{
     margin: 0;
     padding: 0;
+}
+
+.Forside{
+    margin-top: 50px;
 }
 
 header{
@@ -30,13 +56,8 @@ footer{
     text-align: center;
     padding: 20px;
     color: #fff;
-    text-align: center;
     bottom: 0;
     width: 100%;
     position: absolute;
     box-sizing: border-box;
-}
-
-header h1 {
-    margin: 0;
 }
