@@ -79,10 +79,6 @@ public class AdventureQuizController {
         // logic processing
         model = questionService.processAnswer(questionNumber, userChoice, nrOfCorrectAnswers, model);
         int nextQuestionNumber = questionNumber + 1;
-        int restartQuiz = 0;
-        int goHome = 0;
-        model.addAttribute("restartQuiz", restartQuiz);
-        model.addAttribute("goHome", goHome);
         model.addAttribute("questionNumber", questionNumber);
         model.addAttribute("nextQuestionNumber", nextQuestionNumber);
         model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers);
@@ -93,28 +89,26 @@ public class AdventureQuizController {
     @PostMapping("/answer")
     public String postAnswer(@RequestParam("questionNumber") int questionNumber,
                              @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
-                                @RequestParam("nextQuestionNumber") int nextQuestionNumber,
-                                @RequestParam("restartQuiz") int restartQuiz,
-                               @RequestParam("goHome") int goHome,
-                               Model model) {
+                             @RequestParam("nextQuestionNumber") int nextQuestionNumber,
+                             @RequestParam(value = "restartQuiz", required = false, defaultValue = "0") int restartQuiz,
+                             Model model) {
+
+
+        model.addAttribute("restartQuiz", restartQuiz);
+        model.addAttribute("nextQuestionNumber", nextQuestionNumber);
 
         System.out.println();
         System.out.println("DEBUG: postAnswer()");
         System.out.println("questionNumber: " + questionNumber);
         System.out.println("restartQuiz: " + restartQuiz);
-        System.out.println("goHome: " + goHome);
 
-
-        model.addAttribute("nextQuestionNumber", nextQuestionNumber);
 
         if (nextQuestionNumber==11) {
+            System.out.println("if (nextQuestionNumber==11) accessed");
             return "redirect:/result?questionNumber=" + questionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
         } else if (restartQuiz==1) {
             System.out.println("if (restartQuiz==1) accessed");
             return "redirect:/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
-        } else if (goHome==1) {
-            System.out.println("if (goHome==1) accessed");
-            return "redirect:/home";
         } else {
             System.out.println("default accessed");
             return "redirect:/question?questionNumber=" + nextQuestionNumber + "&nrOfCorrectAnswers=" + nrOfCorrectAnswers;
