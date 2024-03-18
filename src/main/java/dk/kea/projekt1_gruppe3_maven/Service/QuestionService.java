@@ -51,14 +51,14 @@ public class QuestionService {
         int uChoice = stringToInt(userChoice, 3);
         Question question = getQuestionByNumber(questionNumber);
         boolean isCorrect = isCorrect(question, uChoice);
-
+        nrOfCorrectAnswers = isCorrect ? nrOfCorrectAnswers + 1 : nrOfCorrectAnswers;
 
         model.addAttribute("questionNumber", questionNumber);
         model.addAttribute("questionTitle", question.getQuestionTitle());
         model.addAttribute("answer", question.getAnswer());
         model.addAttribute("userChoice", userChoice);
         model.addAttribute("isCorrect", isCorrect ? "Correct" : "Incorrect");
-        model.addAttribute("nrOfCorrectAnswers", isCorrect ? nrOfCorrectAnswers + 1 : nrOfCorrectAnswers);
+        model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers);
         return model;
     }
 

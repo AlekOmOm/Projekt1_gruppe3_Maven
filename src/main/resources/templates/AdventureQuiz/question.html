@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/question.css}">
+    <title>s</title>
 </head>
 <body>
 <!-- Main Content Container -->
@@ -13,10 +13,11 @@
     <div class="question-area">
         <h2 th:text="${questionNumber} + '. question - Adventure Quiz'"> Question nr and Quiz Type</h2>
         <h1 th:text="${questionTitle}"></h1>
+
         <form action="#" th:action="@{/question}" method="post">
-            <input type="hidden" name="questionNumber" th:value="${questionNumber}" />
-            <input type="hidden" name="nrOfCorrectAnswers" th:value="${nrOfCorrectAnswers}" />
-            <input type="hidden" name="imageName" th:value="${imageName}" />
+            <input type="hidden" th:name="questionNumber" th:value="${questionNumber}" />
+            <input type="hidden" th:name="nrOfCorrectAnswers" th:value="${nrOfCorrectAnswers}" />
+            <input type="hidden" th:name="imageName" th:value="${imageName}" />
 
 
             <!-- add other hidden fields here if you need them -->
@@ -26,6 +27,7 @@
                 <button type="submit" name="userChoice" value="3" class="option" th:text="${option3}" ></button>
             </div>
         </form>
+
     </div>
 
     <!-- Image Area -->

@@ -78,10 +78,10 @@ public class AdventureQuizController {
 
         // logic processing
         model = questionService.processAnswer(questionNumber, userChoice, nrOfCorrectAnswers, model);
+
         int nextQuestionNumber = questionNumber + 1;
         model.addAttribute("questionNumber", questionNumber);
         model.addAttribute("nextQuestionNumber", nextQuestionNumber);
-        model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers);
 
         return "AdventureQuiz/answer";
     }
@@ -96,12 +96,6 @@ public class AdventureQuizController {
 
         model.addAttribute("restartQuiz", restartQuiz);
         model.addAttribute("nextQuestionNumber", nextQuestionNumber);
-
-        System.out.println();
-        System.out.println("DEBUG: postAnswer()");
-        System.out.println("questionNumber: " + questionNumber);
-        System.out.println("restartQuiz: " + restartQuiz);
-
 
         if (nextQuestionNumber==11) {
             System.out.println("if (nextQuestionNumber==11) accessed");
@@ -120,17 +114,8 @@ public class AdventureQuizController {
                              @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                              Model model) {
 
-        System.out.println();
-        System.out.println("DEBUG: getResult()");
-        System.out.println("questionNumber: " + questionNumber);
-        System.out.println("nrOfCorrectAnswers: " + nrOfCorrectAnswers);
 
         int percentageOfCorrectAnswers = (int) ((nrOfCorrectAnswers / 10.0) * 100);
-
-        model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers);
-        model.addAttribute("percentageOfCorrectAnswers", percentageOfCorrectAnswers);
-        model.addAttribute("questionNumber", questionNumber);
-
 
         int restartQuiz = 0;
         int goHome = 0;
