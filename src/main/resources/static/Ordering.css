@@ -1,10 +1,12 @@
 body {
-    background-color: gray;
+    background-color: white;
     font-family: Arial;
+
     margin: 0;
     padding: 0;
+
+
     /* Her centreres på siden */
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; /* vh er view hight */
@@ -15,7 +17,7 @@ form{
     padding: 20px;
     border-radius: 10px;
     /* kanten på bokesen */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
     margin: 0 auto;
 }
 
@@ -23,12 +25,13 @@ form{
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #cccccc;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .knapper{
+    margin-top: 20px;
   display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -41,4 +44,34 @@ margin-left: auto;
 
 
 
+header h1{
+    margin: 0;
+}
 
+p{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header{
+    font-family: Arial sans-serif;
+    background-color: #333;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+
+footer{
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+}
