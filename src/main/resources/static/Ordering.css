@@ -1,48 +1,44 @@
 body {
-    font-family: Arial, sans-serif;
+    background-color: gray;
+    font-family: Arial;
     margin: 0;
     padding: 0;
-    /* centrer på siden */
+    /* Her centreres på siden */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 100% af view height */
-    background-color: #f4f4f4; /* grå */
+    height: 100vh; /* vh er view hight */
 }
-form {
-    background-color: #ffffff;
+
+form{
+    background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    /* card like shadows */
-    /* https://www.w3schools.com/css/css3_shadows_box.asp */
+    border-radius: 10px;
+    /* kanten på bokesen */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 0 auto;
 }
-.input {
+
+.input{
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #cccccc;
     border-radius: 4px;
-    /* inner width + padding + border counts towards width */
-    /* https://www.w3schools.com/css/css3_box-sizing.asp */
     box-sizing: border-box;
 }
-.submit {
+
+.knapper{
+  display: flex;
+    justify-content: flex-end;
     width: 100%;
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
-.result-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    /* card like shadows */
-    /* https://www.w3schools.com/css/css3_shadows_box.asp */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
+.knapper input[type="submit"]{
+margin-left: auto;
 }
+
+
+
+
+

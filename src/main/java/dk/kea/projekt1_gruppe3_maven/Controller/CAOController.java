@@ -6,7 +6,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 public class CAOController {
     @GetMapping("/Company")
-    public String bmiCalculator(){ return "Company";
+    public String Company(){ return "Company";
     }
+
+    @GetMapping("/Ordering")
+    public String Ordering(){ return "Ordering";
+    }
+
+    @GetMapping("/OrderConfirmed")
+    public String OrderConfirmed(){ return "OrderConfirmed";
+    }
+
 }
 
