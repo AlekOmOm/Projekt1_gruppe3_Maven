@@ -2,7 +2,6 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.5;
     color: #333;
     margin: 0;
     padding: 0;
@@ -16,4 +15,16 @@ h1{
 p {
     margin: 0;
     padding: 0;
+}
+
+header, footer {
+    background-color: #333;
+    text-align: center;
+    padding: 20px;
+    flex: 0 0 auto;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
 }

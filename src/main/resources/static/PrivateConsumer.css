@@ -1,6 +1,7 @@
 
 /* Laver layout for body, header, footer, container og box's */
 body {
+    font-family: Arial sans-serif;
     background-image: url('../../../../../Projekt1_gruppe3_Maven/src/main/resources/static/Images/modernSkrald.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,94 +32,90 @@ display: none;
 }
 
 header, footer {
-    background-color: #ddd;
-    padding: 20px;
+    background-color: #333;
     text-align: center;
+    padding: 20px;
     flex: 0 0 auto;
-}
-header {
-    text-align: center;
-    background-color: #333;
     color: #fff;
-    padding: 10px;
-}
-header h1 {
-    margin: 0;
 }
 
-.text {
-    text-align: center;
-    font-size: 1vw;
-    font-family: Arial, sans-serif;
-    display: block;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.7);
-    max-width: 50%;
-}
-pre {
-    font-family: Arial, sans-serif;
-    padding: 10px;
-}
+    header h1 {
+        margin: 0;
+    }
 
-p {
-    font-family: Arial, sans-serif;
-}
+    .text {
+        text-align: center;
+        font-size: 1vw;
+        font-family: Arial, sans-serif;
+        display: block;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.7);
+        max-width: 50%;
+    }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 7px;
-    text-align: center;
-}
+    pre {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+    }
 
-/* Styler container og boxes */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 1;
-    padding: 20px;
-}
+    p {
+        font-family: Arial, sans-serif;
+    }
 
-.box {
-    background-color: rgba(170,169,173,0.7);
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    position: sticky;
-    top: 10px;
-    text-align: center;
-    flex: 1;
-}
-.homeButtonTitel {
-    font-size: 1vw;
-    font-family: Arial, sans-serif;
-    display: block;
-    margin: 0 auto;
 
-    max-width: 50%;
-    padding: 20px;
-}
-.homeScreenButton {
-    cursor: pointer;
-    width: 50px;
-}
-.homeScreenLogo {
-    width: 20px;
-    height: 20px;
+    /* Styler container og boxes */
 
-}
-.privateQuizz {
-    font-size: 1vw;
-    font-family: Arial, sans-serif;
-    display: block;
-    margin: 0 auto;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex: 1;
+        padding: 20px;
+    }
 
-    max-width: 50%;
-    padding: 20px;
-}
+    .box {
+        background-color: rgba(170, 169, 173, 0.7);
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        position: sticky;
+        top: 10px;
+        text-align: center;
+        flex: 1;
+    }
 
-.tagQuizz {
-    cursor: pointer;
-    width: 90px;
+    .homeButtonTitel {
+        font-size: 1vw;
+        font-family: Arial, sans-serif;
+        display: block;
+        margin: 0 auto;
 
-}
+        max-width: 50%;
+        padding: 20px;
+    }
+
+    .homeScreenButton {
+        cursor: pointer;
+        width: 50px;
+    }
+
+    .homeScreenLogo {
+        width: 20px;
+        height: 20px;
+
+    }
+
+    .privateQuizz {
+        font-size: 1vw;
+        font-family: Arial, sans-serif;
+        display: block;
+        margin: 0 auto;
+
+        max-width: 50%;
+        padding: 20px;
+    }
+
+    .tagQuizz {
+        cursor: pointer;
+        width: 90px;
+
+    }

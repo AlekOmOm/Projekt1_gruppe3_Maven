@@ -1,3 +1,12 @@
+body{
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
 .Medddelse{
     text-align: center;
     font-family: Arial;
@@ -14,4 +23,24 @@
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
+}
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+header h1 {
+    margin: 0;
+}
+
+header, footer {
+    padding: 20px;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.Return{
+    margin-top: 50px;
 }
