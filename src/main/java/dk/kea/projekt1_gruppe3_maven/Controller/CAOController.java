@@ -14,8 +14,10 @@ public class CAOController {
     }
 
     @GetMapping("/OrderConfirmed")
-    public String OrderConfirmed(){ return "OrderConfirmed";
-    }
+    public String OrderConfirmed(){ return "OrderConfirmed";}
+
+    @GetMapping("/PrivateConsumer")
+    public String PrivateConsumer(){return "PrivateConsumer";}
 
 }
 
