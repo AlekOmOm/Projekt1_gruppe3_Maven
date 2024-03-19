@@ -2,7 +2,7 @@
 /* Laver layout for body, header, footer, container og box's */
 body {
     font-family: Arial sans-serif;
-    background-image: url('../../../../../Projekt1_gruppe3_Maven/src/main/resources/static/Images/modernSkrald.png');
+    background-image: url('images/modernSkrald.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -22,7 +22,7 @@ display: none;
 
 
 .main-content {
-    background-image: url("Images/modernSkraldJpg.jpg");
+    background-image: url("Images/ModernSkraldJpg.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
