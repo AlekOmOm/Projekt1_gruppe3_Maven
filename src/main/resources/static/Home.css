@@ -1,4 +1,13 @@
 body {
+
+    background-image: url('images/HOMEPAGE.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+
     text-align: center;
     font-family: Arial, sans-serif;
 
@@ -8,7 +17,7 @@ body {
 .option:hover {
     background-color: #ddd;
 }
-.option {
+.option1 {
     font-family: Arial, sans-serif;
     display: inline-block;
     padding: 10px 20px;
@@ -18,9 +27,34 @@ body {
     border-radius: 5px;
     text-decoration: none;
     color: black;
-    align-items: center;
     cursor: pointer;
 }
+.option2 {
+    font-family: Arial, sans-serif;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.option3 {
+    font-family: Arial, sans-serif;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
 h1{
     padding: 0;
     margin: 0;
@@ -57,11 +91,9 @@ header h1 {
 }
 
 .indhold{
-    background-color: #e5e5e5;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding-left: 10%;
-    padding-right: 10%;
-    margin: 20px auto;
-    width: 20%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: -80px;
 }
