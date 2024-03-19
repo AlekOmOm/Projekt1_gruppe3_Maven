@@ -24,14 +24,10 @@ body{
     transform: translateX(-50%);
 }
 
-header {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
+
 header h1 {
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 p{
     margin: 0;
