@@ -1,18 +1,83 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Quiz Results</title>
-    <link rel="stylesheet" type="text/css" th:href="style.css">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/answer.css}">
-
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .option:hover {
+        background-color: #ddd;
+    }
+    .option {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #f0f0f0;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        text-decoration: none;
+        color: black;
+        align-items: center;
+        cursor: pointer;
+    }
+    .optionsContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .para {
+        padding-top: 185px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .header {
+        background-color: #333;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        flex: 0 0 auto;
+        padding: 0px;
+    }
+    .footer {
+        font-family: sans-serif;
+        position: fixed;
+        color: #fff;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        padding: 10px;
+    }
+    p {
+        font-family: Arial, sans-serif;
+        margin: 10px;
+        padding: 10px;
+    }
+</style>
     <body>
+    <div class="header">
+        <header>
+            <h1>Quiz Results!</h1>
+        </header>
+    </div>
         <form action="#" th:action="@{/result}" method="post">
 
-            <h2>Quiz Results</h2>
-            <p>Number of Correct Answers: <span th:text="${nrOfCorrectAnswers}"></span></p>
-            <p>Number of Questions: <span text="10"></span></p>
-            <p>Percentage of Correct Answers: <span th:text="${percentageOfCorrectAnswers + '%, well done!'}"></span></p>
+            <div class="para">
+            <p><strong>Number of Correct Answers: </strong><span th:text="${nrOfCorrectAnswers}"></span></p>
+            <p><strong>Number of Questions: </strong><span text="10"></span></p>
+            <p><strong>Percentage of Correct Answers: </strong><span th:text="${percentageOfCorrectAnswers + '%, well done!'}"></span></p>
+            </div>
 
             <img th:src="@{/Images/beatUpDora.jpg}" th:if="${nrOfCorrectAnswers == 1}" class="result-image" alt="Image for 1 correct answer"/>
             <img th:src="@{/Images/infoOnDora.jpg}" th:if="${nrOfCorrectAnswers == 10}" class="result-image" alt="Image for perfect score"/>
@@ -29,5 +94,10 @@
                 <button type="submit" th:name="goHome" value="1" class="option"> Go to Home Page </button>
             </div>
         </form>
+        <div class="footer">
+            <footer>
+                <p>Copyright © 2024 Organisation mod Madspild</p>
+            </footer>
+        </div>
     </body>
 </html>
