@@ -5,20 +5,21 @@
     <title>Organisation</title>
     <link rel="stylesheet" href="Organization.css">
 </head>
+
 <body>
     <header>
         <h1> Velkommen organisation! </h1>
     </header>
 
-
     <div class="Knapper">
-        <a href url="/question?questionNumber=1&nrOfCorrectAnswers=0">
-            <button type="button"> Klik her for at starte den store adventure quiz!</button>
-        </a>
 
-        <a href="Home.html" class="ForsideKnap">
-            <button type="button"> Klik her for at komme tilbage til forsiden </button>
-        </a>
+        <form action="/Organization" method="post">
+            <div class="optionsContainer">
+                <button type="submit" name="choice" value="1" class="option">Klik her for at starte den store Adventure quiz!</button>
+                <button type="submit" name="choice" value="2" class="option">Klik her for at komme tilbage til forsiden</button>
+            </div>
+        </form>
+
     </div>
 
     <footer>
