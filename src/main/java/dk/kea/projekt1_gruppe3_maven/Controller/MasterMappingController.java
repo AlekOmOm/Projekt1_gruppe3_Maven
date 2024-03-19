@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 
-public class GetMapingController {
+public class MasterMappingController {
     @GetMapping("/Company")
     public String Company(){ return "Company";
     }
@@ -25,6 +25,10 @@ public class GetMapingController {
     @GetMapping("/Organization")
     public String OrganizationPage(){return "Organization";}
 
+    @GetMapping("/error")
+    public String error() {
+        return "error";
+    }
     @PostMapping("/Organization")
     public String redirectQuiz(@RequestParam("choice") int choice) {
 
@@ -37,5 +41,7 @@ public class GetMapingController {
 
 
 
+    @GetMapping("/home")
+    public String displayHome() {return "home";}
 }
 
