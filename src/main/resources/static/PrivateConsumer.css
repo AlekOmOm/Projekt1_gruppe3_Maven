@@ -113,12 +113,23 @@ footer{
     .homeScreenButton {
         cursor: pointer;
         width: 50px;
+        display: inline-block;
+        padding: 10px 10px;
+        margin: 10px;
+        background-color: #f0f0f0;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        text-decoration: none;
+        color: black;
+        align-items: center;
+        }
+    .homeScreenButton:hover {
+        background-color: #ddd;
     }
 
     .homeScreenLogo {
         width: 20px;
         height: 20px;
-
     }
 
     .privateQuizz {
@@ -134,6 +145,17 @@ footer{
     .tagQuizz {
         cursor: pointer;
         width: 90px;
-
+        display: inline-block;
+        padding: 10px 10px;
+        margin: 10px;
+        background-color: #f0f0f0;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        text-decoration: none;
+        color: black;
+        align-items: center;
+    }
+    .tagQuizz:hover {
+    background-color: #ddd;
     }
 
