@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 
-public class CAOController {
+public class GetMapingController {
     @GetMapping("/Company")
     public String Company(){ return "Company";
     }
@@ -19,6 +19,8 @@ public class CAOController {
     @GetMapping("/PrivateConsumer")
     public String PrivateConsumer(){return "PrivateConsumer";}
 
+    @GetMapping("/Organization")
+    public String OrganizationPage(){return "Organization";}
 
 
 }
