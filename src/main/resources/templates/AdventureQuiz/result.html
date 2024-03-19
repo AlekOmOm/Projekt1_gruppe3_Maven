@@ -13,6 +13,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+
     }
     .option:hover {
         background-color: #ddd;
@@ -34,13 +35,40 @@
         flex-direction: row;
         justify-content: center;
     }
+
+    .contentContainer {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
     .para {
-        padding-top: 185px;
+        flex: 1;
+        margin-left: 150px;
+        margin-right: 20px;
+        text-align: left;
+
+        padding-top: 140px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items: flex-start;
     }
+    .image-area{
+        flex: 1;
+        margin-left: 20px;
+        margin-right: 100px;
+        align-content: center;
+    }
+    .image-area img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+        padding-top: 80px;
+    }
+
+
     .header {
         background-color: #333;
         color: #fff;
@@ -49,7 +77,7 @@
         flex: 0 0 auto;
         padding: 0;
     }
-    
+
     .footer {
         font-family: sans-serif;
         position: fixed;
@@ -78,18 +106,20 @@
             <input type="hidden" name="nrOfCorrectAnswers" th:value="${nrOfCorrectAnswers}" />
             <input type="hidden" name="restartQuiz" th:value="${restartQuiz}" />
             <input type="hidden" name="goHome" th:value="${goHome}" />
-
+            <div class = "contentContainer">
             <div class="para">
             <p><strong>Number of Correct Answers: </strong><span th:text="${nrOfCorrectAnswers}"></span></p>
             <p><strong>Number of Questions: </strong><span th:text="${questionNumber}"></span></p>
             <p><strong>Percentage of Correct Answers: </strong><span th:text="${percentageOfCorrectAnswers + '%, well done!'}"></span></p>
             </div>
 
+            <div class="image-area">
             <img th:src="@{/Images/beatUpDora.jpg}" th:if="${nrOfCorrectAnswers == 1}" class="result-image" alt="Image for 1 correct answer"/>
             <img th:src="@{/Images/infoOnDora.jpg}" th:if="${nrOfCorrectAnswers == 10}" class="result-image" alt="Image for perfect score"/>
             <img th:src="@{/Images/wellDoneDoraAndMonkey.jpg}" th:if="${nrOfCorrectAnswers > 1 and nrOfCorrectAnswers < 10}" class="result-image" alt="Image for getting between 2 and 9 correct answers"/>
             <!-- ... -->
-
+            </div>
+            </div>
 
             <!-- ...other form controls... -->
             <div class="optionsContainer">
