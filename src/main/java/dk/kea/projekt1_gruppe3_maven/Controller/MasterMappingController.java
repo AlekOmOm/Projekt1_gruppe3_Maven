@@ -15,7 +15,7 @@ public class MasterMappingController {
     @PostMapping("/Company")
     public String optionsCompany(@RequestParam("choice") int choice) {
         if (choice == 1) {
-            return "redirect:/Home";
+            return "redirect:/home";
         } else {
             return "redirect:/Ordering";
         }

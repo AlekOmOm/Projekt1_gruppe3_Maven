@@ -50,20 +50,22 @@
         flex: 0 0 auto;
     }
     .footer {
-        font-family: sans-serif;
-        position: fixed;
-        color: #fff;
-        bottom: 0;
-        padding: 10px;
-        width: 100%;
+        font-family: Arial, sans-serif;
         background-color: #333;
         text-align: center;
+        padding: 20px;
+        color: #fff;
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+        box-sizing: border-box;
     }
     p {
         font-family: Arial, sans-serif;
-        margin: 10px;
-        padding: 10px;
+        margin: 0;
+        padding: 0;
     }
+
 </style>
 <body>
 <header class="header">
@@ -72,14 +74,16 @@
 
 <div class="para">
 <p><strong>Question Number:</strong> <span th:text="${questionNumber}"></span></p>
-
+<br>
 <p><strong>Your Choice:</strong> <span th:text="${userChoice}"></span></p>
-
+<br>
 <!-- Feedback 'correct' or 'incorrect' -->
 <p><strong>Your Answer is:</strong> <span th:text="${isCorrect}">Feedback Content</span></p>
-
+<br>
 <!-- The count of correct answers in a row -->
 <p><strong>Number of Correct Answers:</strong> <span th:text="${nrOfCorrectAnswers}"></span></p>
+    <br>
+    <br>
 </div>
 
 <!-- Buttons for restart and next question -->
@@ -105,7 +109,7 @@
 
 <div class="footer">
     <footer>
-        <p>Copyright © 2024 Organisation mod Madspild</p>
+        <p class="CopyrightBesked">Copyright © 2024 Organisation mod Madspild</p>
     </footer>
 </div>
 </body>
