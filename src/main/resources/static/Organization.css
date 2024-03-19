@@ -7,13 +7,6 @@ body{
     min-height: 100vh;
     box-sizing: border-box;
 }
-
-p{
-    margin: 0;
-    padding: 0;
-}
-
-
 header{
     font-family: Arial sans-serif;
     background-color: #333;
@@ -26,7 +19,6 @@ h1{
     margin: 0;
     font-family: Arial, sans-serif;
 }
-
 .overUnderskrift{
     flex: 50%;
     text-align: center;
@@ -67,26 +59,6 @@ footer{
     width: 100%;
     position: absolute;
     box-sizing: border-box;
-}
-
-.Knapper{
-    display: flex;
-    gap: 200px;
-    justify-content: center;
-    margin-top: 20%;
-    position: absolute;
-}
-
-button{
-    cursor: pointer;
-}
-
-h2{
-    text-align: center;
-}
-
-.optionsContainer{
-
 }
 
 
