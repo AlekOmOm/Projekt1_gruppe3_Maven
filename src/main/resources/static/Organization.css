@@ -40,12 +40,11 @@ footer{
 }
 
 .Knapper{
-
     display: flex;
     gap: 100px;
     justify-content: center;
     align-items: center;
-    vertical-align: center;
+    margin-top: 20%;
 }
 
 button{
