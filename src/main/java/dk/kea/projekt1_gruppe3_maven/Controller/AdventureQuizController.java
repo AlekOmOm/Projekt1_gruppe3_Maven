@@ -37,7 +37,6 @@ public class AdventureQuizController {
                                @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                                Model model) {
 
-
         question = questionService.getQuestionByNumber(questionNumber); // fetch the question
         if (question == null) {
             model.addAttribute("error", "The question with number " + questionNumber + " does not exist.");
@@ -134,11 +133,6 @@ public class AdventureQuizController {
                               @RequestParam(value = "restartQuiz", required = false, defaultValue = "0") int restartQuiz,
                               @RequestParam(value = "goHome", required = false, defaultValue = "0") int goHome,
                               Model model) {
-
-        System.out.println();
-        System.out.println("DEBUG: restartQuiz()");
-        System.out.println("restartQuiz: " + restartQuiz);
-        System.out.println("goHome: " + goHome);
 
         if (restartQuiz==1) {
             System.out.println("if (restartQuiz==1) accessed");
