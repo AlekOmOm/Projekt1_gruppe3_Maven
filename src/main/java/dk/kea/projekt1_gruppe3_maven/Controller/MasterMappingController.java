@@ -49,6 +49,6 @@ public class MasterMappingController {
     }
 
     @GetMapping("/home")
-    public String displayHome() {return "home";}
+    public String displayHome() {return "Home";}
 }
 
