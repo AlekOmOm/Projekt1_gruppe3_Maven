@@ -12,6 +12,15 @@ public class MasterMappingController {
     public String Company(){ return "Company";
     }
 
+    @PostMapping("/Company")
+    public String optionsCompany(@RequestParam("choice") int choice) {
+        if (choice == 1) {
+            return "redirect:/Home";
+        } else {
+            return "redirect:/Ordering";
+        }
+    }
+
     @GetMapping("/Ordering")
     public String Ordering(){ return "Ordering";
     }

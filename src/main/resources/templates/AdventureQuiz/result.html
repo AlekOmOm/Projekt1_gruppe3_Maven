@@ -104,27 +104,29 @@
 
             <input type="hidden" name="questionNumber" th:value="${questionNumber}" />
             <input type="hidden" name="nrOfCorrectAnswers" th:value="${nrOfCorrectAnswers}" />
-            <input type="hidden" name="restartQuiz" th:value="${restartQuiz}" />
-            <input type="hidden" name="goHome" th:value="${goHome}" />
-            <div class = "contentContainer">
-            <div class="para">
-            <p><strong>Number of Correct Answers: </strong><span th:text="${nrOfCorrectAnswers}"></span></p>
-            <p><strong>Number of Questions: </strong><span th:text="${questionNumber}"></span></p>
-            <p><strong>Percentage of Correct Answers: </strong><span th:text="${percentageOfCorrectAnswers + '%, well done!'}"></span></p>
-            </div>
+            <input type="hidden" name="percentageOfCorrectAnswers" th:value="${percentageOfCorrectAnswers}" />
 
-            <div class="image-area">
-            <img th:src="@{/Images/beatUpDora.jpg}" th:if="${nrOfCorrectAnswers == 1}" class="result-image" alt="Image for 1 correct answer"/>
-            <img th:src="@{/Images/infoOnDora.jpg}" th:if="${nrOfCorrectAnswers == 10}" class="result-image" alt="Image for perfect score"/>
-            <img th:src="@{/Images/wellDoneDoraAndMonkey.jpg}" th:if="${nrOfCorrectAnswers > 1 and nrOfCorrectAnswers < 10}" class="result-image" alt="Image for getting between 2 and 9 correct answers"/>
-            <!-- ... -->
-            </div>
+
+
+            <div class = "contentContainer">
+                <div class="para">
+                <p><strong>Number of Correct Answers: </strong><span th:text="${nrOfCorrectAnswers}"></span></p>
+                <p><strong>Number of Questions: </strong><span th:text="${questionNumber}"></span></p>
+                <p><strong>Percentage of Correct Answers: </strong><span th:text="${percentageOfCorrectAnswers + '%, well done!'}"></span></p>
+                </div>
+
+                <div class="image-area">
+                <img th:src="@{/Images/beatUpDora.jpg}" th:if="${nrOfCorrectAnswers == 1}" class="result-image" alt="Image for 1 correct answer"/>
+                <img th:src="@{/Images/infoOnDora.jpg}" th:if="${nrOfCorrectAnswers == 10}" class="result-image" alt="Image for perfect score"/>
+                <img th:src="@{/Images/wellDoneDoraAndMonkey.jpg}" th:if="${nrOfCorrectAnswers > 1 and nrOfCorrectAnswers < 10}" class="result-image" alt="Image for getting between 2 and 9 correct answers"/>
+                <!-- ... -->
+                </div>
             </div>
 
             <!-- ...other form controls... -->
             <div class="optionsContainer">
                 <button type="submit" th:name="restartQuiz" value="1" class="option"> Restart Quiz </button>
-                <button type="submit" th:name="goHome" value="2" class="option"> Go to Home Page </button>
+                <button type="submit" th:name="goHome" value="1" class="option"> Go to Home Page </button>
             </div>
         </form>
         <div class="footer">

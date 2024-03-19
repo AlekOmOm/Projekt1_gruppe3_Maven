@@ -118,14 +118,11 @@ public class AdventureQuizController {
 
         int percentageOfCorrectAnswers = (int) ((nrOfCorrectAnswers / 10.0) * 100);
 
-        int restartQuiz = 0;
-        int goHome = 0;
 
         model.addAttribute("questionNumber", questionNumber);
         model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers);
         model.addAttribute("percentageOfCorrectAnswers", percentageOfCorrectAnswers);
-        model.addAttribute("restartQuiz", restartQuiz);
-        model.addAttribute("goHome", goHome);
+
 
         return "AdventureQuiz/result";
     }
@@ -134,8 +131,8 @@ public class AdventureQuizController {
     public String restartQuiz(@RequestParam("questionNumber") int questionNumber,
                               @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
                               @RequestParam("percentageOfCorrectAnswers") int percentageOfCorrectAnswers,
-                              @RequestParam("restartQuiz") int restartQuiz,
-                              @RequestParam("goHome") int goHome,
+                              @RequestParam(value = "restartQuiz", required = false, defaultValue = "0") int restartQuiz,
+                              @RequestParam(value = "goHome", required = false, defaultValue = "0") int goHome,
                               Model model) {
 
         System.out.println();
@@ -146,13 +143,12 @@ public class AdventureQuizController {
         if (restartQuiz==1) {
             System.out.println("if (restartQuiz==1) accessed");
             return "redirect:question?questionNumber=1" + "&nrOfCorrectAnswers=0";
-        } else if (goHome==2) {
+        } else if (goHome==1) {
             System.out.println("if (goHome==1) accessed");
             return "redirect:home";
-        } else {
-            System.out.println("AdventureQuiz/AdventureQuiz accessed");
-            return "redirect:AdventureQuiz";
-
+        }  else {
+            System.out.println("default accessed");
+            return "redirect:home";
         }
     }
 
