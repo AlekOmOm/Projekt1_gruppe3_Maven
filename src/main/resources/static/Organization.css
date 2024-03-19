@@ -6,6 +6,7 @@ body{
     flex-direction: column;
     min-height: 100vh;
     box-sizing: border-box;
+    height: 100vh;
 }
 header{
     font-family: Arial sans-serif;
@@ -22,7 +23,8 @@ h1{
 .overUnderskrift{
     flex: 50%;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 100px;
+    align-items: center;
 }
 p{
     margin: 0;

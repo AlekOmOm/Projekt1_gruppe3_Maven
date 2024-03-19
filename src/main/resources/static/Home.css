@@ -5,7 +5,22 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.option:hover {
+    background-color: #ddd;
+}
+.option {
+    font-family: Arial, sans-serif;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    cursor: pointer;
+}
 h1{
     padding: 0;
     margin: 0;
@@ -42,7 +57,7 @@ header h1 {
 }
 
 .indhold{
-    background-color: #f9f9f9;
+    background-color: #e5e5e5;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     padding-left: 10%;
     padding-right: 10%;
