@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-
+    text-align: center;
 
 }
 
@@ -41,10 +41,10 @@ footer{
 
 .Knapper{
     display: flex;
-    gap: 100px;
+    gap: 200px;
     justify-content: center;
-    align-items: center;
     margin-top: 20%;
+    position: absolute;
 }
 
 button{
@@ -52,7 +52,11 @@ button{
 }
 
 h2{
-    justify-content: center;
+    text-align: center;
+}
+
+.optionsContainer{
+
 }
 
 
