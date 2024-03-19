@@ -120,6 +120,10 @@ public class AdventureQuizController {
 
         int restartQuiz = 0;
         int goHome = 0;
+
+        model.addAttribute("questionNumber", questionNumber);
+        model.addAttribute("nrOfCorrectAnswers", nrOfCorrectAnswers);
+        model.addAttribute("percentageOfCorrectAnswers", percentageOfCorrectAnswers);
         model.addAttribute("restartQuiz", restartQuiz);
         model.addAttribute("goHome", goHome);
 
@@ -127,7 +131,10 @@ public class AdventureQuizController {
     }
 
     @PostMapping("/result")
-    public String restartQuiz(@RequestParam("restartQuiz") int restartQuiz,
+    public String restartQuiz(@RequestParam("questionNumber") int questionNumber,
+                              @RequestParam("nrOfCorrectAnswers") int nrOfCorrectAnswers,
+                              @RequestParam("percentageOfCorrectAnswers") int percentageOfCorrectAnswers,
+                              @RequestParam("restartQuiz") int restartQuiz,
                               @RequestParam("goHome") int goHome,
                               Model model) {
 
@@ -139,13 +146,11 @@ public class AdventureQuizController {
         if (restartQuiz==1) {
             System.out.println("if (restartQuiz==1) accessed");
             return "redirect:question?questionNumber=1" + "&nrOfCorrectAnswers=0";
-        } else if (goHome==1) {
+        } else if (goHome==2) {
             System.out.println("if (goHome==1) accessed");
-            // templates/Home.html
             return "redirect:home";
         } else {
             System.out.println("AdventureQuiz/AdventureQuiz accessed");
-            // templates/AdventureQuiz/AdventureQuiz.html
             return "redirect:AdventureQuiz";
 
         }
