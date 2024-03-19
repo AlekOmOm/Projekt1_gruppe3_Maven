@@ -2,6 +2,9 @@ package dk.kea.projekt1_gruppe3_maven.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 @Controller
 
 public class GetMapingController {
@@ -21,6 +24,17 @@ public class GetMapingController {
 
     @GetMapping("/Organization")
     public String OrganizationPage(){return "Organization";}
+
+    @PostMapping("/Organization")
+    public String redirectQuiz(@RequestParam("choice") int choice) {
+
+        if (choice == 1) {
+            return "redirect:/question?questionNumber=1&nrOfCorrectAnswers=0";
+        } else {
+            return "redirect:/home";
+        }
+    }
+
 
 
 }

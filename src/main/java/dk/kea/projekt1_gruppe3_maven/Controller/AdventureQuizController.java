@@ -31,15 +31,6 @@ public class AdventureQuizController {
         return "redirect:/question?questionNumber=1" + "&nrOfCorrectAnswers=0";
     }
 
-    @PostMapping("/Organization")
-    public String redirectQuiz(@RequestParam("choice") int choice) {
-
-        if (choice == 1) {
-            return "redirect:/question?questionNumber=1&nrOfCorrectAnswers=0";
-        } else {
-            return "redirect:/home";
-        }
-    }
 
     @GetMapping("/question")
     public String showQuestion(@RequestParam("questionNumber") int questionNumber,
