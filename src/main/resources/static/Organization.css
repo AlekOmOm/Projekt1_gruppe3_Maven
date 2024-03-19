@@ -24,6 +24,7 @@ h1{
     flex: 50%;
     text-align: center;
     padding-top: 100px;
+    align-items: center;
 }
 p{
     margin: 0;
