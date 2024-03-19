@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Company.css">
     <title>CompanyPage</title>
@@ -14,19 +13,14 @@
     <h1> Velkommen virksomhed! </h1>
 </header>
 
-  <div class="knapcontainer">
-        <div class="TilbageTilForside">
-            <a href="/home">
-                <button class="Knap">Klik her for at gå tilbage til forsiden</button>
-            </a>
+<div class="Knapper">
+    <form action="/Company" method="post">
+        <div class="optionsContainer">
+            <button type="submit" name="choice" value="1" class="option">Klik her for at gå tilbage til forsiden!</button>
+            <button type="submit" name="choice" value="2" class="option">Klik her for at bestille jeres flyers!</button>
         </div>
-
-      <div class="TilBestillingsSide">
-          <a href="/Ordering">
-              <button class="Knap"> Klik her for at bestille jeres flyers </button>
-          </a>
-      </div>
-  </div>
+    </form>
+</div>
 
 <div class="Foto1">
     <img class="billede" src="/Images/Foto200.jpg">
