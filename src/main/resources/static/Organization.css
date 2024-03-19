@@ -1,22 +1,12 @@
 body{
     margin: 0;
     padding: 0;
-
-
-}
-
-h1{
-    padding: 0;
-    margin: 0;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
-
-p{
-    margin: 0;
-    padding: 0;
-}
-
-
 header{
     font-family: Arial sans-serif;
     background-color: #333;
@@ -24,9 +14,41 @@ header{
     padding: 20px;
     color: #fff;
 }
-
-
-
+h1{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.overUnderskrift{
+    flex: 50%;
+    text-align: center;
+    padding-top: 200px;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.option:hover {
+    background-color: #ddd;
+}
+.option {
+    font-family: Arial, sans-serif;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    cursor: pointer;
+}
+.Knapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 footer{
     font-family: Arial, sans-serif;
     background-color: #333;
@@ -37,22 +59,6 @@ footer{
     width: 100%;
     position: absolute;
     box-sizing: border-box;
-}
-
-.Knapper{
-    display: flex;
-    gap: 100px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20%;
-}
-
-button{
-    cursor: pointer;
-}
-
-h2{
-    justify-content: center;
 }
 
 
