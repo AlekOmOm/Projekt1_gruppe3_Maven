@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 
-public class GetMapingController {
+public class MasterMappingController {
     @GetMapping("/Company")
     public String Company(){ return "Company";
     }
@@ -22,6 +22,12 @@ public class GetMapingController {
     @GetMapping("/Organization")
     public String OrganizationPage(){return "Organization";}
 
+    @GetMapping("/error")
+    public String error() {
+        return "error";
+    }
 
+    @GetMapping("/home")
+    public String displayHome() {return "home";}
 }
 
